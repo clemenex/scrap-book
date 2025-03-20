@@ -101,7 +101,7 @@ For better reference, kindly refer to the `book.py` file to see the actual code.
 | - Quit WebDriver                        |
 | - Print completion message              |
 +------------------------------------------+
-
+```
 
 ## 📋 Challenges and Limitations
 ### 1️⃣ Dynamic Content
