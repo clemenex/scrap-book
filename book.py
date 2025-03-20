@@ -15,17 +15,20 @@ genres = [
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")  # Important for running inside Docker
+chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--window-size=1920x1080")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36")
 
-service = Service(ChromeDriverManager().install())
+service = Service("/usr/bin/chromedriver")  # Make sure chromedriver is correctly installed
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
 all_books = []
 
 for genre in genres:
-    genre_url = f"https://www.goodreads.com/shelf/show/{genre.lower().replace(' ', '-').replace("'", '')}"
+    processed_genre = re.sub(r"[\s']", "-", genre.lower())
+    genre_url = f"https://www.goodreads.com/shelf/show/{processed_genre}"
     print(f"Scraping {genre}... ({genre_url})")
     
     driver.get(genre_url)
