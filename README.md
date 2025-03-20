@@ -60,7 +60,7 @@ The project follows the rules and guidelines laid down by the website (https://w
 - The script uses a delay (time.sleep(5)) between each request to reduce the load on the server and mimic more human-like browsing behavior. This prevents overwhelming Goodreads’ servers with too many rapid requests. By scraping at a controlled rate, the script aims to prevent affecting the user experience of others and to avoid violating terms related to server load or overuse.
 
 ## 📁 Output and Result
-For the project's output and result, kindly refer and open the csv file: `goodreads_books_by_genre.csv`.
+For the project's output and result, kindly refer and open the csv file: `goodreads_books_by_genre.csv`. The file can be viewed by itself here on Github or may also be downloadable.
 
 ## 🚀 How to Run the Scraper
 ### 1️⃣ Install Dependencies
@@ -79,9 +79,8 @@ The scraper will fetch book details from multiple Goodreads genres and save them
 
 ## 📁 Project Structure
 ```
-📂 goodreads-scraper
-├── 📄 scraper.py          # Main scraping script
-├── 📄 requirements.txt    # List of dependencies
+📂 scrap-book
+├── 📄 book.py          # Main scraping script
 ├── 📄 README.md           # Documentation
 └── 📄 goodreads_books_by_genre.csv  # Output file (generated)
 ```
