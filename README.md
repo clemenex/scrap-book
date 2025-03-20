@@ -31,6 +31,8 @@ I chose this website because it is one of the open source book websites that all
 
 # Web Scraping Methodology Flow Diagram
 For better reference, kindly refer to the `book.py` file to see the actual code.
+
+```plaintext
 +------------------------------------------+
 |         1. Setup and Configuration       |
 | - Install packages and libraries        |
