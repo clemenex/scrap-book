@@ -27,6 +27,80 @@ I chose this website because it is one of the open source book websites that all
 - **Pandas**
 - **Regex**
 
+## 🔬 Methodology
+
+# Web Scraping Methodology Flow Diagram
+For better reference, kindly refer to the `book.py` file to see the actual code.
++------------------------------------------+
+|         1. Setup and Configuration       |
+| - Install packages and libraries        |
+| - Setup WebDriver and Chrome options    |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|        2. Define Data Requirements      |
+| - List genres to scrape                 |
+| - Format URLs based on genre            |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|     3. Initialize Selenium WebDriver    |
+| - Launch headless browser               |
+| - Set Chrome options                    |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|       4. Loop Through Each Genre        |
+| - Generate URLs for each genre          |
+| - Open each genre URL                   |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|        5. Scrape Genre Pages            |
+| - Load the page using driver.get()      |
+| - Wait for the page to load (sleep)     |
+| - Extract page HTML                     |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|     6. Parse HTML Content with BS4      |
+| - Parse the HTML using BeautifulSoup    |
+| - Find all book divs                    |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|   7. Extract Book Information           |
+| - Extract title, author, rating, etc.   |
+| - Use regex for rating and year         |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|         8. Store Extracted Data         |
+| - Append book details to list           |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|        9. Save Data to CSV             |
+| - Convert list to DataFrame             |
+| - Save to CSV file                      |
++------------------------------------------+
+                     |
+                     v
++------------------------------------------+
+|        10. Cleanup and End              |
+| - Quit WebDriver                        |
+| - Print completion message              |
++------------------------------------------+
+
+
 ## 📋 Challenges and Limitations
 ### 1️⃣ Dynamic Content
 The website uses JavaScript to dynamically load its content. Because of this, I had to use another scraping tool, `Selenium` in order to handle dynamic content, on top of `BeautifulSoup`. Selenium is used to automate a real browser session, which can process JavaScript and dynamically load content. By using driver.get(genre_url), the script allows the browser to fully load the page, including any JavaScript-rendered elements, before scraping the data. After waiting for the page to load (time.sleep(5)), the script fetches the fully rendered HTML with driver.page_source. This ensures that the book data, which is dynamically loaded by JavaScript, is available for scraping.
