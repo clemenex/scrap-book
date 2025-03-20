@@ -91,9 +91,9 @@ The scraper will fetch book details from multiple Goodreads genres and save them
 - Goodreads might update its site structure, so ensure the **CSS selectors** are up to date.
 
 ## 📌 To-Do
-- [ ] Implement multi-threading for faster scraping
-- [ ] Add support for paginated results
-- [ ] Improve error handling
+- [ ] Finish docker containerization setup
+- [ ] Add airflow to automate scraping
+- [ ] Setup airflow DAGs
 
 ## 🤝 Contributions
 Feel free to fork the repo, submit PRs, or open issues! 😊
